@@ -15,4 +15,25 @@
             <a href="#">Contact_us</a>
         </div>
     </body>
+    <section>
+        <img class="slides" src="giraffe.jpg" style="height: 500px;">
+        <img class="slides" src="Panda.jpg" style="height: 500px;">
+    </section>
+    <script>
+        // Automatic Slideshow - Change image evry 3 secs    
+        var myIndex = 0;
+        Carousel();
+
+        function Carousel() {
+            var i;
+         var slides =   document.getElementsByClassName("slides")
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            myIndex++;
+            if (myIndex > slides.length) { myIndex =  1; }
+            slides[myIndex - 1].style.display = "block";
+            setTimeout(Carousel, 3000);
+        }
+    </script>
 </html>
